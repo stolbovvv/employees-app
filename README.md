@@ -1,4 +1,4 @@
-# Cpunter React App
+# Employees React App
 
 Практическая работа по разработке React приложения. Базовое знакомство с React.
 
