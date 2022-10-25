@@ -1,0 +1,17 @@
+.app {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.app__filter {
+  margin: 30px 0px 30px 0px;
+  padding: 25px 25px 25px 25px;
+  background-color: #3d5a80;
+  border-radius: 4px;
+  box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.app__filter > * + * {
+  margin: 20px 0 0 0;
+}
