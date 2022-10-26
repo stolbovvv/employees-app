@@ -61,18 +61,16 @@ class App extends Component {
   };
 
   filterByType = (type, arr) => {
-    return arr.filter((item) => {
-      switch (type) {
-        case 'rise':
-          return item.rise;
+    switch (type) {
+      case 'rise':
+        return arr.filter((item) => item.rise);
 
-        case 'salary':
-          return item.salary >= 1000;
+      case 'salary':
+        return arr.filter((item) => item.salary > 1000);
 
-        default:
-          return item;
-      }
-    });
+      default:
+        return arr;
+    }
   };
 
   render() {
