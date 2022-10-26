@@ -10,8 +10,17 @@ class EmployeesAddForm extends Component {
     };
   }
 
-  onValueChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
+  onValueChange = (e) => this.setState({ [e.target.name]: e.target.value });
+
+  onSubmitChange = (e) => {
+    e.preventDefault();
+
+    if (this.state.name.length >= 3 || +this.state.salary > 0) {
+      this.props.onAppendItem(this.state);
+      this.setState({ name: '', salary: '' });
+    } else {
+      console.log('Ошибка добавления сотрудника!!!');
+    }
   };
 
   render() {
@@ -20,7 +29,7 @@ class EmployeesAddForm extends Component {
     return (
       <div className="app-add-form">
         <h3>Добавьте нового сотрудника</h3>
-        <form className="add-form d-flex">
+        <form className="add-form d-flex" onSubmit={(e) => this.onSubmitChange(e)}>
           <input
             className="form-control new-post-label"
             name="name"
